@@ -1,4 +1,4 @@
-package com.j2k.todo
+package com.j2k.todo.model
 
 import android.databinding.Bindable
 import android.databinding.Observable

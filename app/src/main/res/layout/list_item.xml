@@ -9,7 +9,7 @@
             type="com.j2k.todo.view.MainAdapter"/>
         <variable
             name="item"
-            type="com.j2k.todo.Item"/>
+            type="com.j2k.todo.model.Item"/>
     </data>
 
     <android.support.v7.widget.CardView

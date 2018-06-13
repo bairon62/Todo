@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.j2k.todo.Item"/>
+            type="com.j2k.todo.model.Item"/>
         <variable
             name="activity"
             type="com.j2k.todo.view.MainActivity"/>

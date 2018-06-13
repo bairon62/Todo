@@ -1,7 +1,8 @@
-package com.j2k.todo
+package com.j2k.todo.model.realm
 
 import android.content.Context
 import android.util.Log
+import com.j2k.todo.model.Item
 import io.reactivex.Observable
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -100,7 +101,7 @@ class RealmDataManager {
             realm.close()
         }
     }
-    fun updateItem(item:Item): Observable<Any> {
+    fun updateItem(item: Item): Observable<Any> {
         return Observable.create {
             observer ->
             val realm = Realm.getDefaultInstance()

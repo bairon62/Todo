@@ -6,14 +6,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.j2k.todo.MainViewModel
+import com.j2k.todo.viewmodel.MainViewModel
 import com.j2k.todo.R
 import com.j2k.todo.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var viewModel:MainViewModel? = null
+    private var viewModel: MainViewModel? = null
     private var adapter: MainAdapter? = null
     var pd: ProgressDialog? = null
 
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.activity = this
 
         pd = ProgressDialog.show(this, "처리중", "처리중")
-        viewModel =  MainViewModel()
+        viewModel = MainViewModel()
         initList()
         viewModel?.init(this, adapter)
         adapter?.initViewModel(viewModel)

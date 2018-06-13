@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.j2k.todo.BR
-import com.j2k.todo.Item
-import com.j2k.todo.MainViewModel
+import com.j2k.todo.model.Item
+import com.j2k.todo.viewmodel.MainViewModel
 import com.j2k.todo.databinding.ListItemBinding
 import java.text.SimpleDateFormat
 import java.util.*

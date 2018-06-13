@@ -1,6 +1,8 @@
-package com.j2k.todo
+package com.j2k.todo.viewmodel
 
 import android.content.Context
+import com.j2k.todo.model.Item
+import com.j2k.todo.model.realm.RealmDataManager
 import com.j2k.todo.view.MainActivity
 import com.j2k.todo.view.MainAdapter
 import com.j2k.todo.view.ViewHolder
@@ -47,7 +49,7 @@ class MainViewModel {
 
     }
 
-    fun onClickUpdateButton(item:Item, holder: ViewHolder) {
+    fun onClickUpdateButton(item: Item, holder: ViewHolder) {
         (context as MainActivity).pd?.show()
         realmDataManager!!.updateItem(item)
                 .subscribeOn(Schedulers.newThread())
@@ -68,7 +70,7 @@ class MainViewModel {
                 }
     }
 
-    fun onChecked(item:Item) {
+    fun onChecked(item: Item) {
         (context as MainActivity).pd?.show()
         realmDataManager!!.updateItem(item)
                 .subscribeOn(Schedulers.newThread())
