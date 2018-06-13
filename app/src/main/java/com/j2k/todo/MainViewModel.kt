@@ -11,9 +11,9 @@ import java.util.*
 
 class MainViewModel {
 
-    var context: Context? = null
-    var realmDataManager: RealmDataManager? = null
-    var adapter: MainAdapter? = null
+    private var context: Context? = null
+    private var realmDataManager: RealmDataManager? = null
+    private var adapter: MainAdapter? = null
 
     fun init(context: Context, adapter: MainAdapter?) {
         this.context = context

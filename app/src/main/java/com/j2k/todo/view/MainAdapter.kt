@@ -34,7 +34,7 @@ class ViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding
     }
 }
 
-class MainAdapter(val context: Context): RecyclerView.Adapter<ViewHolder>() {
+class MainAdapter(private val context: Context): RecyclerView.Adapter<ViewHolder>() {
 
     var data = mutableListOf<Item>()
     private var viewModel: MainViewModel? = null

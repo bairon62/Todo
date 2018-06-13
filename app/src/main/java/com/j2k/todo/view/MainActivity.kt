@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var viewModel:MainViewModel? = null
-    var adapter: MainAdapter? = null
+    private var viewModel:MainViewModel? = null
+    private var adapter: MainAdapter? = null
     var pd: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,10 +34,6 @@ class MainActivity : AppCompatActivity() {
         listView.layoutManager = LinearLayoutManager(this)
         adapter = MainAdapter(this)
         listView.adapter = adapter
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     fun regButtonClick(view: View) {
