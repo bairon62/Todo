@@ -1,3 +1,4 @@
 # Todo
 
-test
+android databinding + mvvm + rx + kotlin + realm
+
