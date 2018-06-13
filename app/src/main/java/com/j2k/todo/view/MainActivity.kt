@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.j2k.todo.MainViewModel
 import com.j2k.todo.R
 import com.j2k.todo.databinding.ActivityMainBinding
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding:ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        binding.activity = this
 
         pd = ProgressDialog.show(this, "처리중", "처리중")
         viewModel =  MainViewModel()
@@ -28,11 +29,6 @@ class MainActivity : AppCompatActivity() {
         viewModel?.init(this, adapter)
         adapter?.initViewModel(viewModel)
 
-
-        reg_button.setOnClickListener {
-
-            viewModel?.onClickRegButton(editText.text.toString())
-        }
 
 
     }
@@ -45,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    fun regButtonClick(view: View) {
+        viewModel?.onClickRegButton(editText.text.toString())
     }
 
 

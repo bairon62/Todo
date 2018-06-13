@@ -63,8 +63,6 @@ class MainAdapter(val context: Context): RecyclerView.Adapter<ViewHolder>() {
 
     }
 
-
-
     override fun getItemCount(): Int {
         return data.size
     }

@@ -8,6 +8,9 @@
         <variable
             name="item"
             type="com.j2k.todo.Item"/>
+        <variable
+            name="activity"
+            type="com.j2k.todo.view.MainActivity"/>
     </data>
 
 
@@ -32,7 +35,8 @@
                 android:id="@+id/reg_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="저장" />
+                android:text="저장"
+                android:onClick="@{activity::regButtonClick}"/>
 
         </LinearLayout>
 
