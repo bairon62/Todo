@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.j2k.todo.BR
 import com.j2k.todo.Item
 import com.j2k.todo.MainViewModel
-import com.j2k.todo.R
 import com.j2k.todo.databinding.ListItemBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -38,10 +37,10 @@ class ViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding
 class MainAdapter(val context: Context): RecyclerView.Adapter<ViewHolder>() {
 
     var data = mutableListOf<Item>()
-    var viewModel: MainViewModel? = null
+    private var viewModel: MainViewModel? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var item: Item = data[position]
+        val item: Item = data[position]
         holder.bind(item)
         holder.binding.btnDelete.setOnClickListener {
             viewModel?.onClickDeleteButton(item.id)
@@ -69,10 +68,8 @@ class MainAdapter(val context: Context): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var binding:ListItemBinding = ListItemBinding.inflate(inflater, parent, false)
-        val mainView = inflater.inflate(R.layout.list_item, parent, false)
-        var viewHolder = ViewHolder(binding)
-        return viewHolder
+        val binding:ListItemBinding = ListItemBinding.inflate(inflater, parent, false)
+        return ViewHolder(binding)
     }
 
     fun initViewModel(viewModel: MainViewModel?) {

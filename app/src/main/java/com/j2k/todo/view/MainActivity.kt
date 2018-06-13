@@ -2,9 +2,8 @@ package com.j2k.todo.view
 
 import android.app.ProgressDialog
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.j2k.todo.MainViewModel
@@ -28,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         initList()
         viewModel?.init(this, adapter)
         adapter?.initViewModel(viewModel)
-
-
 
     }
 

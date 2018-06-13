@@ -1,12 +1,9 @@
 package com.j2k.todo
 
 import android.content.Context
-import android.util.Log
 import com.j2k.todo.view.MainActivity
 import com.j2k.todo.view.MainAdapter
 import com.j2k.todo.view.ViewHolder
-import io.reactivex.Completable
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.text.SimpleDateFormat
@@ -29,15 +26,15 @@ class MainViewModel {
     }
 
     fun onClickRegButton(text: String) {
-        var item :Item = Item()
+        val item = Item()
         realmDataManager!!.getLastID()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     id ->
-                    item?.id = id
-                    item?.content = text
-                    item?.date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
+                    item.id = id
+                    item.content = text
+                    item.date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date())
 
                     realmDataManager!!.saveItem(item)
                             .subscribeOn(Schedulers.newThread())
@@ -82,7 +79,7 @@ class MainViewModel {
     }
 
 
-    fun loadItems() {
+    private fun loadItems() {
         realmDataManager!!.getAllItems()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,7 +90,7 @@ class MainViewModel {
                 }
     }
 
-    fun updateView(items:List<Item>) {
+    private fun updateView(items:List<Item>) {
         adapter?.data = items as MutableList<Item>
         adapter?.notifyDataSetChanged()
     }
