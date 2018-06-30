@@ -24,7 +24,6 @@ class MainViewModel {
         realmDataManager?.initRealm(context)
         loadItems()
 
-
     }
 
     fun onClickRegButton(text: String) {

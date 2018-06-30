@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
@@ -12,20 +12,19 @@
             type="com.j2k.todo.model.Item"/>
     </data>
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardBackgroundColor="#33000000"
-        card_view:cardCornerRadius="10dp"
+        card_view:cardCornerRadius="5dp"
         card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <CheckBox
@@ -56,10 +55,10 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:gravity="center"
                     android:text="@{item.content}"
-                    android:textColor="#FFFFFF" />
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -68,7 +67,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@{item.date}"
-                    android:textColor="#FFFFFF" />
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
@@ -76,23 +75,26 @@
                 android:id="@+id/btn_update"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:scaleType="center"
-                card_view:srcCompat="@android:drawable/ic_menu_edit" />
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                card_view:srcCompat="@drawable/edit" />
 
             <ImageView
                 android:id="@+id/btn_delete"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:scaleType="center"
-                card_view:srcCompat="@android:drawable/btn_dialog" />
+                android:padding="5dp"
+                android:scaleType="fitXY"
+                card_view:srcCompat="@drawable/delete" />
 
             <ImageView
                 android:id="@+id/btn_confirm"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:padding="5dp"
                 android:scaleType="fitXY"
                 android:visibility="gone"
-                card_view:srcCompat="@drawable/saveicon" />
+                card_view:srcCompat="@drawable/save" />
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
